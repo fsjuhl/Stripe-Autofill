@@ -1,0 +1,23 @@
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script>
+  var handler = StripeCheckout.configure({
+    key: 'pk_live_W03ibMwcW3mBfaKFogczTCrG',
+    locale: 'auto'
+  });
+
+  handler.open({
+    name: 'Stripe Autofill',
+    description: 'Enter your info and click Save info.',
+    currency: 'USD',
+    amount: 0,
+    billingAddress: true,
+    shippingAddress: true,
+    panelLabel: "Save info"
+  });
+  e.preventDefault();
+
+  // Close Checkout on page navigation:
+  window.addEventListener('popstate', function() {
+    handler.close();
+  });
+</script>
