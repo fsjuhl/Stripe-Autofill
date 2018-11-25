@@ -5,7 +5,7 @@
     key: 'pk_live_W03ibMwcW3mBfaKFogczTCrG',
     locale: 'auto'
   });
-
+  
   handler.open({
     name: 'Stripe Autofill',
     description: 'Enter your info and click Save info.',
@@ -15,9 +15,7 @@
     shippingAddress: true,
     panelLabel: "Save info"
   });
-  e.preventDefault();
-
-  // Close Checkout on page navigation:
+  
   window.addEventListener('popstate', function() {
     handler.close();
   });
