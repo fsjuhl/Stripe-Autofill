@@ -1,24 +1,37 @@
 <!DOCTYPE html>
-<script src="https://checkout.stripe.com/checkout.js"></script>
-<script>
-  var handler = StripeCheckout.configure({
-//     key: 'pk_live_W03ibMwcW3mBfaKFogczTCrG',
-    key: 'pk_live_rsos9KggpkJEaMgJ4zkBvMeL', // The public API key from https://stripe.com/checkout
-    locale: 'auto'
-  });
-  
-  handler.open({
-    name: 'Stripe Autofill',
-    description: 'Enter your info and click Save info.',
-    currency: 'USD',
-    amount: 0,
-    billingAddress: true,
-    shippingAddress: true,
-    panelLabel: "Save info"
-  });
-  
-  window.addEventListener('popstate', function() {
-    handler.close();
-  });
-</script>
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142068343-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-142068343-1');
+    </script>
+</head>
+
+<body>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script>
+      var handler = StripeCheckout.configure({
+        // key: 'pk_live_W03ibMwcW3mBfaKFogczTCrG',
+        key: 'pk_live_rsos9KggpkJEaMgJ4zkBvMeL', // The public API key from https://stripe.com/checkout
+        locale: 'auto'
+      });
+
+      handler.open({
+        name: 'Stripe Autofill',
+        description: 'Enter your info and click Save info.',
+        currency: 'USD',
+        amount: 0,
+        billingAddress: true,
+        shippingAddress: true,
+        panelLabel: "Save info"
+      });
+
+      window.addEventListener('popstate', function() {
+        handler.close();
+      });
+    </script>
+</body>
 </html>
